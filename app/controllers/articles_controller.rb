@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :show, :destroy]
   
   def index
-    @articles = Article.all #Notice how we added an s to article to create a new instance varia that contains all articles
+    @articles = Article.paginate(page: params[:page], per_page: 5) #Notice how we added an s to article to create a new instance varia that contains all articles
   end
   
 
