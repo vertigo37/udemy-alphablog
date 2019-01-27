@@ -13,6 +13,7 @@ get 'about', to: 'pages#about'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  resources :categories, except: [:destroy]
 #   ressource create routes for all methods included in users_controller, except for the method new
 #   which has a special path create with the get 'signup' , to 'user#new' line above
 end
